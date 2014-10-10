@@ -1,0 +1,23 @@
+https://www.firebase.com/docs/web/libraries/angular/api.html
+put firebase in the app.js
+put scripts in our index
+pur $firebase in controller?... s o app.controller("cont", function($scope, firebaseService){
+	var sync = firebaseService.getFirebaseRef()
+
+	$scope.list = sync.$asArray(); // this goes and gets data that is at our URL and is going to bind it to our scope
+
+	$scope.list.$add()
+	var index = dataService.getIndice($scope.list, $scope.newTask)
+	$scope.list.$remove(index)
+})
+
+
+created a new service firebaseservice.js not going to use the restful version but going to use their skd
+
+
+use a factory, return an object, app.factory("farebaseService", function($firebase))return {
+	getFirebaseRef: function(){
+		return $firebase(new Firebase(url from app on firebase))
+	}
+}
+
